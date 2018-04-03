@@ -2,24 +2,80 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title></title>
+    <title>Thanks a Latte!</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1 class="title">Coffee!</h1>
     <hr>
 
-    <div id="coffees"></div>
-    <select id="roast-selection">
-        <option>light</option>
-        <option>medium</option>
-        <option>dark</option>
-    </select>
-    <form>
-        <label for="roast-selection"></label>
-        <input id="submit" type="submit" />
-    </form>
 
+    <div class="container">
+
+        <div class="row">
+            <!--Display coffee data section -->
+            <div class="col-8">
+                <div id="coffees" class=""></div>
+            </div>
+            <!-- Input and User Interactions -->
+            <div class="col-4">
+
+
+                <form>
+                    <label for="roast-selection">Roast</label>
+                    <select id="roast-selection">
+                        <option selected>All</option>
+                        <option>light</option>
+                        <option>medium</option>
+                        <option>dark</option>
+                    </select>
+                    <label for="coffee-name">Coffee Name</label>
+                    <input type="text" id="coffee-name">
+
+
+
+                    <input id="submit" type="submit" />
+
+                </form>
+
+
+
+
+
+                <h3>Add a Coffee</h3>
+
+
+                <label for="roast-add-selection">Roast</label>
+                <select id="roast-add-selection">
+                    <option>light</option>
+                    <option>medium</option>
+                    <option>dark</option>
+                </select>
+
+                <input type="text" id="coffee-add-name">
+                <input id="submit-add" type="submit" />
+
+
+
+            </div>
+        </div>
+
+    </div>
+
+
+
+
+
+
+
+
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 
     <script src="main.js"></script>
 </body>
