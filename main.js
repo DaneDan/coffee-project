@@ -45,7 +45,7 @@ function addCoffees(e, name, roast) {
 }
 
 // from http://www.ncausa.org/About-Coffee/Coffee-Roasts-Guide
-var coffees = [
+var coffeesMaster = [
     {id: 1, name: 'Light City', roast: 'light'},
     {id: 2, name: 'Half City', roast: 'light'},
     {id: 3, name: 'Cinnamon', roast: 'light'},
@@ -61,7 +61,7 @@ var coffees = [
     {id: 13, name: 'Italian', roast: 'dark'},
     {id: 14, name: 'French', roast: 'dark'}
 ];
-
+var coffees = Array.from(coffeesMaster);
 
 /* Checks if local storage is set, if not sets default storage*/
 if (localStorage.getItem('coffees') === null) {
@@ -73,11 +73,22 @@ if (localStorage.getItem('coffees') === null) {
 
 coffees.reverse();
 
+function resetLocal(e) {
+    var asure = confirm("are you sure you want to reset the list of coffees?");
+    if(asure) {
+        localStorage.removeItem("coffees");
+        coffees = Array.from(coffeesMaster);
+        updateCoffees(e);
+    }
+
+}
+
 var tbody = document.querySelector('#coffees');
 var submitButton = document.querySelector('#submit');
 var searchText = document.querySelector('#coffee-name');
 var roastSelection = document.querySelector('#roast-selection');
 var addCoffee = document.querySelector('#submit-add');
+var resetbtn = document.querySelector('#reset');
 
 
 tbody.innerHTML = renderCoffees(coffees);
@@ -86,3 +97,4 @@ submitButton.addEventListener('click', updateCoffees);
 searchText.addEventListener('input',updateCoffees);
 roastSelection.addEventListener('change',updateCoffees);
 addCoffee.addEventListener('click',addCoffees);
+resetbtn.addEventListener('click',resetLocal);
