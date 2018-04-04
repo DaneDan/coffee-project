@@ -73,6 +73,7 @@ if (localStorage.getItem('coffees') === null) {
 
 coffees.reverse();
 
+//reset local storage
 function resetLocal(e) {
     var asure = confirm("are you sure you want to reset the list of coffees?");
     if(asure) {
